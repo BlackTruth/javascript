@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type coercion operations</title>
+</head>
+<body>
+<p>Type coertion operations</p>
+<script>
+    let x = "Bob"
+
+    console.log("           The typeof operator");
+    console.log('typeof "Bob"', typeof x) // "string"
+
+    x = 3.14;
+    console.log('typeof 3.14', typeof x) // "number"
+
+    x = NaN;
+    console.log('typeof NaN', typeof x) // "number"
+
+    x = false;
+    console.log('typeof false', typeof x) // "boolean"
+
+    x = [1, 2, 3, 4];
+    console.log('typeof [1,2,3,4]', typeof x) // "object"
+
+    x = {name: 'Bob', age: 30};
+    console.log('typeof {name:"Bob", age:30}', typeof x) // "object"
+
+    x = new Date();
+    console.log('typeof new Date()', typeof x) // "object"
+
+    x = function () {
+    };
+    console.log('typeof function () {}', typeof x) // "function"
+
+    console.log('typeof myCar', typeof myCar) // "undefined"
+
+    x = null;
+    console.log('typeof null', typeof x) // "object"
+
+    console.log('           Explicit coerction');
+
+    x = false;
+    console.log('false to number = ', Number(x)); // 0
+    console.log('false to string = ', String(x)); // "false"
+    console.log('false to boolean = ', Boolean(x)); // false
+
+    x = true;
+    console.log('true to number = ', Number(x)); // 1
+    console.log('true to string = ', String(x)); // "true"
+    console.log('true to boolean = ', Boolean(x)); // true
+
+    x = 0;
+    console.log('0 to number = ', Number(x)); // 0
+    console.log('0 to string = ', String(x)); // "0"
+    console.log('0 to boolean = ', Boolean(x)); // false
+
+    x = 1;
+    console.log('1 to number = ', Number(x)); // 1
+    console.log('1 to string = ', String(x)); // "1"
+    console.log('1 to boolean = ', Boolean(x)); // true
+
+    x = "0";
+    console.log('"0" to number = ', Number(x)); // 0
+    console.log('"0" to string = ', String(x)); // "0"
+    console.log('"0" to boolean = ', Boolean(x)); // true
+
+    x = "000";
+    console.log('"000" to number = ', Number(x)); // 0
+    console.log('"000" to string = ', String(x)); // "000"
+    console.log('"000" to boolean = ', Boolean(x)); // true
+
+    x = "1";
+    console.log('"1" to number = ', Number(x)); // 1
+    console.log('"1" to string = ', String(x)); // "1"
+    console.log('"1" to boolean = ', Boolean(x)); // true
+
+    x = NaN;
+    console.log('NaN to number = ', Number(x)); // NaN
+    console.log('NaN to string = ', String(x)); // "NaN"
+    console.log('NaN to boolean = ', Boolean(x)); // false
+
+    x = Infinity;
+    console.log('Infinity to number = ', Number(x)); // Infinity
+    console.log('Infinity to string = ', String(x)); // "Infinity"
+    console.log('Infinity to boolean = ', Boolean(x)); // true
+
+    x = -Infinity;
+    console.log('-Infinity to number = ', Number(x)); // -Infinity
+    console.log('-Infinity to string = ', String(x)); // "-Infinity"
+    console.log('-Infinity to boolean = ', Boolean(x)); // true
+
+    x = "";
+    console.log('"" to number = ', Number(x)); // 0
+    console.log('"" to string = ', String(x)); // ""
+    console.log('"" to boolean = ', Boolean(x)); // false
+
+    x = "20";
+    console.log('"20" to number = ', Number(x)); // 20
+    console.log('"20" to string = ', String(x)); // "20"
+    console.log('"20" to boolean = ', Boolean(x)); // true
+
+    x = "ten";
+    console.log('"ten" to number = ', Number(x)); // NaN
+    console.log('"ten" to string = ', String(x)); // "ten"
+    console.log('"ten" to boolean = ', Boolean(x)); // true
+
+    x = [];
+    console.log('[] to number = ', Number(x)); // 0
+    console.log('[] to string = ', String(x)); // ""
+    console.log('[] to boolean = ', Boolean(x)); // true
+
+    x = [10];
+    console.log('[10] to number = ', Number(x)); // 10
+    console.log('[10] to string = ', String(x)); // "10"
+    console.log('[10] to boolean = ', Boolean(x)); // true
+
+    x = [10, 11];
+    console.log('[10, 11] to number = ', Number(x)); // NaN
+    console.log('[10, 11] to string = ', String(x)); // "10, 11"
+    console.log('[10, 11] to boolean = ', Boolean(x)); // true
+
+    x = ["ten"];
+    console.log('["ten"] to number = ', Number(x)); // NaN
+    console.log('["ten"] to string = ', String(x)); // "ten"
+    console.log('["ten"] to boolean = ', Boolean(x)); // true
+
+    x = ["ten, eleven"];
+    console.log('["ten, eleven"] to number = ', Number(x)); // NaN
+    console.log('["ten, eleven"] to string = ', String(x)); // "ten, eleven"
+    console.log('["ten, eleven"] to boolean = ', Boolean(x)); // true
+
+    x = function () {
+    };
+    console.log('function(){} to number = ', Number(x)); // NaN
+    console.log('function(){} to string = ', String(x)); // "function(){}"
+    console.log('function(){} to boolean = ', Boolean(x)); // true
+
+    x = {};
+    console.log('{} to number = ', Number(x)); // NaN
+    console.log('{} to string = ', String(x)); // "[object Object]"
+    console.log('{} to boolean = ', Boolean(x)); // true
+
+    x = null;
+    console.log('null to number = ', Number(x)); // 0
+    console.log('null to string = ', String(x)); // "null"
+    console.log('null to boolean = ', Boolean(x)); // false
+
+    x = undefined;
+    console.log('undefined to number = ', Number(x)); // NaN
+    console.log('undefined to string = ', String(x)); // "undefined"
+    console.log('undefined to boolean = ', Boolean(x)); // false
+
+    console.log('           Implicit coerction');
+
+    x = 5;
+    let y = null;
+    console.log('5 + null = ', x + y); // 5, null is converted to 0
+
+    x = "5";
+    console.log('"5" + null = ', x + y); // "5null", null is converted to "null"
+
+    y = 2;
+    console.log('"5" + 2 = ', x + y); // "52", 2 is converted to "2"
+
+    console.log('"5" - 2 = ', x - y); // 3, "5" is converted to 5
+
+    y = "2";
+    console.log('"5" * "2" = ', x * y); // 10, "5" and "2" are converted to 5 and 2
+
+    console.log('+"2" = ', +y);
+
+    x = 123;
+    y = "456";
+    console.log('123 != "456" returns', x != y); // "456" is converted to 456
+
+    console.log('123 > "456" returns', x > y); // "456" is converted to 456
+
+    console.log("123/null = ", x / null); // null is converted to 0
+
+    x = "";
+    if (x) {
+        console.log('"" is converted to false in the "if" operator');
+    }
+
+    x = "Bob"
+    if (x) {
+        console.log('"Bob" is converted to true in the "if" operator');
+    }
+
+    x = 2;
+    y = 0;
+    console.log('!!2 = ', !!x, "!!Bob = ", !!"bob", "!!0 = ", !!y);
+
+    console.log('2 || "hello" = ', x || "hello"); // 2 converted to true and return 2
+
+    console.log('0 || "hello" = ', y || "hello"); // 0 converted to false, "hello" converted to true and return "hello"
+
+    console.log('           Special rules');
+
+    x = null;
+    y = 0;
+    console.log('null == 0 returns', x == y); // null and undefined doesn't convert to 0 with ==
+
+    y = null;
+    console.log('null == null returns', x == y); // null equals null and undefined
+
+    y = undefined;
+    console.log('null == undefined returns', x == y); // null equals null and undefined
+
+    x = undefined;
+    console.log('undefined == undefined returns', x == y); // undefined equals undefined
+
+    x = NaN;
+    if (x !== x) {
+        console.log("we're dealing with NaN here"); // NaN doesn't equal itself
+    }
+
+</script>
+</body>
+
+</html>
