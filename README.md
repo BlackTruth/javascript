@@ -5,7 +5,7 @@
 - Create an HTML file with a script, where need to implement
   different examples of type coercion.
   
-### _Homework #2_
+### _Homework №2_
 
 ```javascript
 function randn_bm() {
