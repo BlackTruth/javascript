@@ -1,8 +1,3 @@
-function range(min, max) {
-    checkMinMax(min, max);
-    return checkResult((min + max) * (max - min + 1) / 2);
-}
-
 function checkArgLength(args) {
     if (args.length !== 2) {
         throw new Error("Not 2 arguments");
@@ -25,6 +20,11 @@ function checkResult(result) {
         return result;
     }
 
+}
+
+function range(min, max) {
+    checkMinMax(min, max);
+    return checkResult((min + max) * (max - min + 1) / 2);
 }
 
 const memoize = (func) => {
