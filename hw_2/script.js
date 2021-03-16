@@ -6,12 +6,11 @@ function randn_bm() {
     return (Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v) * 2) | 0;
 }
 
-function fillAndGroupRandom(count, randomFunc) {
+function fillObjectWithRandomFn(count, randomFn) {
     const resultObject = {};
-    let wCount = count + 1;
-
-    while ((wCount -= 1)) {
-        const elem = randomFunc();
+    count += 1;
+    while (count -= 1) {
+        const elem = randomFn();
         if (elem in resultObject) {
             resultObject[elem] += 1;
         } else {
@@ -22,12 +21,10 @@ function fillAndGroupRandom(count, randomFunc) {
 }
 
 function drawTable(obj) {
-    console.log(obj);
     console.log("+---------+---------+");
     console.log("|  Number | Count   |");
     console.log("+---------+---------+");
     Object.getOwnPropertyNames(obj)
-        .sort((x, y) => x - y)
         .forEach((prop) => {
             console.log(
                 `|${String(prop).padStart(8)} | ${String(obj[prop]).padEnd(8)}|`
@@ -36,4 +33,4 @@ function drawTable(obj) {
     console.log("+---------+---------+");
 }
 
-drawTable(fillAndGroupRandom(10, randn_bm));
+drawTable(fillObjectWithRandomFn(10, randn_bm));
