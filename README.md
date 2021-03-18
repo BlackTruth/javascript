@@ -19,3 +19,13 @@ function randn_bm() {
 - Using provided function generate 10 numbers. Create object with the keys related to the generated numbers and value as a quantity of corresponding number. Display numbers distribution as a table using template literal string.
 
 - Example of object: {0: 5, 1: 3, 2: 2}
+
+### _Homework №3_
+
+- Implement function ```range(min,max)``` that can return sum of integer numbers in range ```[min,max]```
+
+- Consider edge cases: result is greater than ```Number.MAX_SAFE_INTEGER```, argument is not a number, ```min > max```, etc.
+
+- *For performance reason add memoization mechanism
+
+- Push code to repo “Sum of Row”
