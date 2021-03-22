@@ -29,3 +29,11 @@ function randn_bm() {
 - *For performance reason add memoization mechanism
 
 - Push code to repo “Sum of Row”
+
+### _Homework №4_
+
+- Implement function that leads to the stack overflow issue
+
+- Implement function that can affect memory leak issue
+
+- Push code to repo “memory management”
