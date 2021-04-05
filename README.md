@@ -30,6 +30,24 @@ function randn_bm() {
 
 - Push code to repo “Sum of Row”
 
+### _Homework №4_
+
+- Implement function that leads to the stack overflow issue
+
+- Implement function that can affect memory leak issue
+
+- Push code to repo “memory management”
+
+### _Homework №5_
+
+- Describe base class Entity that can store name​
+
+- Implement child classes Stuff, Box, User. Box can store some stuff[]. Every box belongs to user​
+
+- Add example of usage of these classes, e.g., create some instances, display data related to them​
+
+- Push code to repo “user stuff”
+
 ### _Homework №6_
 
 - Given array of numbers is encrypted Russian phrase. Find most frequent letters in text.
