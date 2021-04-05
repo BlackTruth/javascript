@@ -48,6 +48,7 @@ function randn_bm() {
 
 - Push code to repo “user stuff”
 
+
 ### _Homework №6_
 
 - Given array of numbers is encrypted Russian phrase. Find most frequent letters in text.
