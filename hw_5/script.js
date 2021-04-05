@@ -59,32 +59,34 @@ class User extends Entity {
   }
 }
 
-// let kanstantsin = new User("Kanstantsin");
-//
-// let kanstantinsFirstBox = new Box("box1", kanstantsin);
-//
-// let kanstantinsSecondBox = new Box("box2", kanstantsin, [new Stuff("pen")]);
-//
-// console.log(kanstantinsSecondBox);
-//
-// kanstantinsSecondBox.addStuff(new Stuff("credit card"));
-//
-// console.log(kanstantinsSecondBox + "");
-//
-// try {
-//   kanstantinsSecondBox.addStuff("phone");
-// } catch (e) {
-//   console.error(e.message);
-// }
-//
-// try {
-//   kanstantinsFirstBox.owner = new User("Alisa");
-//   console.log(kanstantinsFirstBox.owner);
-//   kanstantinsFirstBox.owner = "Peter";
-// } catch (e) {
-//   console.error(e.message);
-// }
-//
-// console.log(kanstantinsFirstBox + "");
-//
-// console.log(new Entity("entity").toString());
+/*
+const kanstantsin = new User("Kanstantsin");
+
+const kanstantinsFirstBox = new Box("box1", kanstantsin);
+
+const kanstantinsSecondBox = new Box("box2", kanstantsin, [new Stuff("pen")]);
+
+console.log(kanstantinsSecondBox);
+
+kanstantinsSecondBox.addStuff(new Stuff("credit card"));
+
+console.log(kanstantinsSecondBox + "");
+
+try {
+  kanstantinsSecondBox.addStuff("phone");
+} catch (e) {
+  console.error(e.message);
+}
+
+try {
+  kanstantinsFirstBox.owner = new User("Alisa");
+  console.log(kanstantinsFirstBox.owner);
+  kanstantinsFirstBox.owner = "Peter";
+} catch (e) {
+  console.error(e.message);
+}
+
+console.log(kanstantinsFirstBox + "");
+
+console.log(new Entity("entity").toString());
+*/
