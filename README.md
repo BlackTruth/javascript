@@ -69,3 +69,13 @@ function randn_bm() {
 - Add module that can write down on page game result (1st win, 2nd win or draw)
 
 - Push code to repo “Tic-Tac-Toe”
+
+### _Homework №8_
+
+- Add to html page table with header and some rows
+
+- Add to header event listener to implement sorting functionality across the table data (alphabetical)
+
+- Add to cells user interaction feature (click and edit text)
+
+- Push code to repo “table”
