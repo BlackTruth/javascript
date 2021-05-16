@@ -69,3 +69,53 @@ function randn_bm() {
 - Add module that can write down on page game result (1st win, 2nd win or draw)
 
 - Push code to repo “Tic-Tac-Toe”
+
+### _Homework №8_
+
+- Add to html page table with header and some rows
+
+- Add to header event listener to implement sorting functionality across the table data (alphabetical)
+
+- Add to cells user interaction feature (click and edit text)
+
+- Push code to repo “table”
+
+### _Homework №9_
+
+- Develop 4 function that can perform operations +, -, *, / but return result with some random delay (> than 1sec)
+
+- Create stack calculation module that can interact with mentioned before functions and handle Reverse Polish notation input
+
+- Calculate “1 2 + 3 × 4 +”
+
+- Push code to repo “quirk numbers”
+
+- https://en.wikipedia.org/wiki/Reverse_Polish_notation
+
+### _Homework №10_
+
+- Develop page with two dropdowns “Base” and “Symbol”
+
+- Values of selections should invoke render of currency rates from https://api.ratesapi.io/api/latest​
+
+- Handle possible error cases
+
+- Push code to repo “gold”
+
+- https://ratesapi.io/documentation/
+
+### _Homework №11_
+
+- Convert your code from previous HM by the Babel transpiler to ES5 version
+
+- Check working status of app for different browsers
+
+- Push code to repo “es5”
+
+### _Homework №12_
+
+- Split your code from previous HM to some modules (at least 2)​
+
+- Implement dynamic import for module​
+
+- Push code to repo “multi_module”
