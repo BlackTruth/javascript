@@ -111,3 +111,11 @@ function randn_bm() {
 - Check working status of app for different browsers
 
 - Push code to repo “es5”
+
+### _Homework №12_
+
+- Split your code from previous HM to some modules (at least 2)​
+
+- Implement dynamic import for module​
+
+- Push code to repo “multi_module”

@@ -1,19 +1,4 @@
-const baseApiUrl = "https://api.ratesapi.io/api/latest";
-
-const getDataRequest = async (apiUrl, params = "") => {
-  try {
-    const res = await fetch(apiUrl + params);
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(JSON.stringify(data));
-    }
-    return data;
-  } catch (e) {
-    throw new Error(`Error while reading http response: ${e.message}`);
-  }
-};
-
-class ExchangeRateView {
+export default class ExchangeRateView {
   constructor(getDataFromApi) {
     this.getDataFromApi = getDataFromApi;
   }
@@ -87,6 +72,3 @@ class ExchangeRateView {
       });
   }
 }
-
-const view = new ExchangeRateView(getDataRequest.bind(null, baseApiUrl));
-view.render();
