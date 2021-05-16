@@ -103,3 +103,11 @@ function randn_bm() {
 - Push code to repo “gold”
 
 - https://ratesapi.io/documentation/
+
+### _Homework №11_
+
+- Convert your code from previous HM by the Babel transpiler to ES5 version
+
+- Check working status of app for different browsers
+
+- Push code to repo “es5”

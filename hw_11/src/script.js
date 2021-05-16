@@ -1,5 +1,3 @@
-// const fetch = require("node-fetch");
-
 const baseApiUrl = "https://api.ratesapi.io/api/latest";
 
 const getDataRequest = async (apiUrl, params = "") => {
