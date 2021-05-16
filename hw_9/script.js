@@ -1,56 +1,26 @@
 class ReversePolishNotation {
-  constructor(expression, verbose = false) {
+  constructor(expression) {
     this.expression = expression;
-    this.verbose = verbose;
   }
 
   promisification(func) {
     return (...args) => {
       const ms = +(Math.random() * 9000 + 1000).toFixed(0);
-      if (this.verbose) {
-        console.log(`Calculate in ${ms} milliseconds...`);
-      }
       return new Promise((resolve) => {
         setTimeout(() => {
           const result = func(...args);
-          if (this.verbose) {
-            console.log(`Intermediate result = ${result}.`);
-          }
           resolve(result);
         }, ms);
       });
     };
   }
 
-  plus = this.promisification((a, b) => {
-    if (this.verbose) {
-      console.log(`${a} + ${b}`);
-    }
-    return a + b;
-  });
-  minus = this.promisification((a, b) => {
-    if (this.verbose) {
-      console.log(`${a} - ${b}`);
-    }
-    return a - b;
-  });
-  multiple = this.promisification((a, b) => {
-    if (this.verbose) {
-      console.log(`${a} * ${b}`);
-    }
-    return a * b;
-  });
-  divide = this.promisification((a, b) => {
-    if (this.verbose) {
-      console.log(`${a} / ${b}`);
-    }
-    return a / b;
-  });
+  plus = this.promisification((a, b) => a + b);
+  minus = this.promisification((a, b) => a - b);
+  multiple = this.promisification((a, b) => a * b);
+  divide = this.promisification((a, b) => a / b);
 
   async calculate() {
-    if (this.verbose) {
-      console.log(`Calculation has been started...`);
-    }
     let operands = this.expression.trim().split(" ");
     let stack = [];
     for (let i = 0; i < operands.length; i++) {
@@ -83,12 +53,9 @@ class ReversePolishNotation {
         }
       }
     }
-    if (this.verbose) {
-      console.log(`Calculation has been ended.`);
-    }
     return stack.pop();
   }
 }
 
-const first = new ReversePolishNotation("1 2 + 3 * 4 +", true);
+const first = new ReversePolishNotation("1 2 + 3 * 4 +");
 first.calculate().then(console.log);
