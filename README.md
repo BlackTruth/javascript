@@ -69,3 +69,25 @@ function randn_bm() {
 - Add module that can write down on page game result (1st win, 2nd win or draw)
 
 - Push code to repo “Tic-Tac-Toe”
+
+### _Homework №8_
+
+- Add to html page table with header and some rows
+
+- Add to header event listener to implement sorting functionality across the table data (alphabetical)
+
+- Add to cells user interaction feature (click and edit text)
+
+- Push code to repo “table”
+
+### _Homework №9_
+
+- Develop 4 function that can perform operations +, -, *, / but return result with some random delay (> than 1sec)
+
+- Create stack calculation module that can interact with mentioned before functions and handle Reverse Polish notation input
+
+- Calculate “1 2 + 3 × 4 +”
+
+- Push code to repo “quirk numbers”
+
+- https://en.wikipedia.org/wiki/Reverse_Polish_notation
