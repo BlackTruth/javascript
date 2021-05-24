@@ -91,3 +91,15 @@ function randn_bm() {
 - Push code to repo “quirk numbers”
 
 - https://en.wikipedia.org/wiki/Reverse_Polish_notation
+
+### _Homework №10_
+
+- Develop page with two dropdowns “Base” and “Symbol”
+
+- Values of selections should invoke render of currency rates from https://api.ratesapi.io/api/latest​
+
+- Handle possible error cases
+
+- Push code to repo “gold”
+
+- https://ratesapi.io/documentation/
