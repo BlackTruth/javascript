@@ -85,7 +85,6 @@ class ExchangeRateView {
     this.getRates()
       .then(this.renderDropdowns)
       .catch((e) => {
-        console.log(e);
         this.alert(e);
       });
   }
