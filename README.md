@@ -79,3 +79,15 @@ function randn_bm() {
 - Add to cells user interaction feature (click and edit text)
 
 - Push code to repo “table”
+
+### _Homework №9_
+
+- Develop 4 function that can perform operations +, -, *, / but return result with some random delay (> than 1sec)
+
+- Create stack calculation module that can interact with mentioned before functions and handle Reverse Polish notation input
+
+- Calculate “1 2 + 3 × 4 +”
+
+- Push code to repo “quirk numbers”
+
+- https://en.wikipedia.org/wiki/Reverse_Polish_notation
