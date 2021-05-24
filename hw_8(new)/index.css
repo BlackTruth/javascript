@@ -1,0 +1,40 @@
+.table {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    border-top: gray 1px solid;
+    border-right: gray 1px solid;
+}
+
+.header {
+    position: relative;
+    background-color: antiquewhite;
+    border-left: gray 1px solid;
+    border-bottom: gray 1px solid;
+    cursor: pointer;
+}
+
+.user {
+    border-left: gray 1px solid;
+    border-bottom: gray 1px solid;
+}
+
+.user.edit span{
+    display: none;
+}
+.user:not(.edit) input{
+    display: none;
+}
+
+.asc::after {
+    content: "↓";
+}
+
+.desc::after {
+    content: "↑";
+}
+
+.asc::after, .desc::after {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
