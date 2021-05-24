@@ -35,7 +35,7 @@ class Table {
   constructor(data) {
     this.data = data;
     this.dataLength = Object.getOwnPropertyNames(data[0]).length;
-    this.sort = [];
+    this.sort = {};
   }
 
   renderUser = (row, rowIndex) => {
@@ -74,7 +74,6 @@ class Table {
       cell.innerText = header;
       cell.className = "header";
       cell.addEventListener("click", () => this.onSort(header, cell));
-      this.sort.push({ name: header, type: "" });
       this.table.appendChild(cell);
     }
 
@@ -83,25 +82,32 @@ class Table {
     const description = document.createElement("p");
     description.innerText =
       "To edit a cell in table double click on cell. To save changes in cell press Enter. " +
-      "To leave cell unchanged double click on cell again. Sort happens on multiple columns." +
-      " Sort direction starts from the most left column and ends at the most right column, e.g `name ASC, age DESC` ";
+      "To leave cell unchanged double click on cell again.";
 
     body.appendChild(description);
   }
 
   onSort = (header, cell) => {
-    const sortRow = this.sort.find(({ name }) => name === header);
-    if (sortRow.type === Table.SORT.asc) {
-      sortRow.type = Table.SORT.desc;
-      cell.classList.remove(Table.SORT.asc);
-      cell.classList.add(Table.SORT.desc);
-    } else if (sortRow.type === Table.SORT.desc) {
-      sortRow.type = "";
-      cell.classList.remove(Table.SORT.desc);
+    const sortRow = this.sort;
+    if (this.sort.header === header) {
+      if (sortRow.type === Table.SORT.asc) {
+        sortRow.type = Table.SORT.desc;
+        cell.classList.remove(Table.SORT.asc);
+        cell.classList.add(Table.SORT.desc);
+      } else {
+        sortRow.type = Table.SORT.asc;
+        cell.classList.remove(Table.SORT.desc);
+        cell.classList.add(Table.SORT.asc);
+      }
     } else {
+      document
+        .querySelectorAll(".header")
+        .forEach((el) => el.classList.remove(...Object.values(Table.SORT)));
       sortRow.type = Table.SORT.asc;
       cell.classList.add(Table.SORT.asc);
     }
+
+    this.sort.header = header;
 
     this.update();
   };
@@ -117,20 +123,18 @@ class Table {
 
   update = () => {
     let sortedData = [...this.data].sort((row1, row2) => {
-      return this.sort.reduce((greater, { name, type }) => {
-        if (greater !== 0) return greater;
-        if (!type) return greater;
-        if (type === Table.SORT.asc) {
-          if (typeof row1[name] === "number") {
-            return row1[name] - row2[name];
-          }
-          return row1[name].localeCompare(row2[name]);
+      const { header, type } = this.sort;
+      if (!type) return 0;
+      if (type === Table.SORT.asc) {
+        if (typeof row1[header] === "number") {
+          return row1[header] - row2[header];
         }
-        if (typeof row1[name] === "number") {
-          return row2[name] - row1[name];
-        }
-        return row2[name].localeCompare(row1[name]);
-      }, 0);
+        return row1[header].localeCompare(row2[header]);
+      }
+      if (typeof row1[header] === "number") {
+        return row2[header] - row1[header];
+      }
+      return row2[header].localeCompare(row1[header]);
     });
 
     const cells = this.table.querySelectorAll(".user");
